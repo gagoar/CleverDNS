@@ -1,0 +1,346 @@
+/* ----------------------------------------------------
+    
+    cleverDNS
+
+    Media: screen
+    Versi—n: 0.1 (marzo 2010)
+    
+    Autor    
+      Dori
+      flavia.ibanez@gmail.com
+
+/* ---------------------------------------------------
+    Reseteo
+------------------------------------------------------ */
+html,body,div,span,
+applet,object,iframe,
+h1,h2,h3,h4,h5,h6,p,blockquote,pre,
+a,abbr,acronym,address,big,cite,code,
+del,dfn,font,img,ins,kbd,q,s,samp,
+small,strike,sub,sup,tt,var,
+dd,dl,dt,li,ol,ul,
+fieldset,form,label,legend,
+table,caption,tbody,tfoot,thead,tr,th,td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 100%;
+    line-height: 18px;
+    font-family: inherit;
+    text-align: left;
+    outline: none;
+}
+html, body {
+    height: 100%;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+a img, :link img, :visited img {
+    border:none
+}
+q:before, q:after,
+blockquote:before, blockquote:after {
+    content: "";
+}
+/* ---------------------------------------------------
+    Tipograf’as & Colores
+------------------------------------------------------ */
+
+body{
+font-family: "Trebuchet MS", Arial, sans-serif;
+font-size: 13px;
+line-height: 15px;
+color: #333;
+background-color: #0d202e;
+background: #0d202e url(images/body_bk.png) left top repeat;
+}
+
+#wrapper{
+background-color: #DDC8BA;
+}
+
+#footer p{
+margin: 0px 30px;
+text-align: center;
+font-weight: bold;
+}
+#menu{
+text-align: right;
+}
+#menu a{
+text-decoration: none;
+color: #fff;
+border-left: 1px solid #fff;
+font-weight: bold;
+letter-spacing: 0.1px;
+}
+#menu a:hover{
+background: none;
+color: #E2610A;}
+	
+	#menu a:first-child{
+	border-left: none;}
+h1{
+font-size: 20px;
+font-weight: bold;
+color: #0d202e;
+padding-bottom: 15px;
+border-bottom: 2px solid #B54B02;}
+th{
+border-bottom: 2px solid #04243C;}
+
+th.actions{
+text-align: right;}
+
+tr{
+vertical-align: middle;}
+tr.row_alt{
+background-color: #C6B4A8;}
+
+.navi{
+text-align: right;
+border-top: 2px solid #B54B02;
+}
+.alert{
+color:#B54B02;
+font-weight: bold;
+text-align: right; }
+
+.show_domain p{
+font-size: 13px;
+}
+.show_domain .show_domain_name{
+font-size: 30px;
+font-weight: bold;
+}
+#footer{
+color: #E2610A;}
+/* ---------------------------------------------------
+    Estructura
+------------------------------------------------------ */
+
+#wrapper{
+display: block;
+position: relative;
+width: 750px;
+margin: 0 auto;
+padding: 120px 25px 50px 25px;
+}
+
+/*primer dise–o de header*/
+
+#brand{
+display: block;
+position: absolute;
+left: -23px;
+top:20px;
+width: 840px;
+height: 95px;
+background: transparent url(images/header.png) left top no-repeat;}
+
+#menu{
+display: block;
+position: absolute;
+width: 370px;
+height: 15px;
+left: 410px;
+top:56px;
+}
+
+/*Segundo dise–o de header descomentar y comentar las anteriores*/
+
+/*
+#brand{
+display: block;
+position: absolute;
+left: -23px;
+top:20px;
+width: 840px;
+height: 95px;
+background: transparent url(images/header2.png) left top no-repeat;}
+
+#menu{
+display: block;
+position: absolute;
+width: 370px;
+height: 15px;
+left: 410px;
+top:78px;
+}
+*/
+	#menu a{
+	display: inline-block;
+	position: relative;
+	padding:0 2px 0 5px;
+	}
+h1{
+margin-bottom: 30px;
+margin-top: 30px;
+clear: both;
+}
+
+table{
+width: 750px;
+}
+th{
+font-weight: bold;
+padding: 0px 5px;}
+
+th.name, p.name{
+width: 35%;}
+
+th.enabled{
+width: 15%;}
+
+p.enabled{
+width: 10%;}
+
+th.ttl, p.ttl{
+width: 10%;}
+
+th.actions{
+width: 10%;}
+
+p.name, p.enabled, p.ttl{
+float: left;
+}
+
+p.address, p.allow{
+width: 35%;
+float: left;}
+
+p.enabled{
+width: 15%;}
+p.ttl{
+width: 35%;
+}
+
+tr{
+height: 25px;
+}
+td{
+padding: 0px 10px;}
+
+.record{
+display: block;
+position: relative;
+float: left;
+width: 100%;
+height: 45px;
+}
+
+.record label{
+margin-left: 20px;}
+
+.record label:first-child{
+margin-left: 0px;}
+
+.record .remove	{
+display: block;
+position: relative;
+float: left;
+margin-top: 20px;
+}
+
+#domain_submit{
+margin: 25px 0px;}
+
+.navi{
+display: block;
+padding-top: 15px;
+margin-top: 10px;
+clear:both;}
+ 
+.div_name, .div_ttl, .div_enabled{
+display: block;
+position: relative;
+float: left;
+height: 80px;
+}
+
+.div_name, .div_ttl{
+width: 300px;}
+
+.show_domain{
+display: block;
+position: relative;
+margin: 30px 0px 40px;
+height: 20px;
+}
+.show_domain .name{
+width: 65%;}
+.show_domain .ttl{
+width: 20%;}
+
+.reg_dir, .reg_allow{
+display: block;
+position: relative;
+float: left;
+line-height: 25px;
+margin-right: 30px;
+width: 200px;
+}
+.reg_allow{
+margin-right: 100px;
+}
+.record_show .record{
+float: none;
+height: 25px;}
+
+#footer{
+display: block;
+position: relative;
+width: 800px;
+height: 22px;
+margin: 0 auto;
+background: transparent url(images/footer.png) left top no-repeat;
+padding-top: 25px;
+}
+ 
+/*----- scaffold overwitten------*/
+
+.fieldWithErrors {
+background-color:transparent;
+display:block;
+padding:2px;
+float: left;
+}
+.fieldWithErrors input{
+border: 2px solid red;}
+
+#errorExplanation {
+width:730px;
+}
+
+#errorExplanation ul li{
+list-style-position: inside;}
+
+/*
+.record .fieldWithErrors{
+position: relative;
+float: none;
+margin-top: 0px;
+}
+*/
+.div_address, .div_allow{
+display: block;
+position: relative;
+float: left;
+width: 300px;
+}
+.record .fieldWithErrors label
+
+/*
+
+
+.record .fieldWithErrors input{
+margin-top: 17px; 
+margin-left: -42px;
+}
+
+.record .fieldWithErrors .input_allow{margin-left: -100px;}
+*/
