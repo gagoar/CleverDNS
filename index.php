@@ -19,11 +19,7 @@
 
 <p>DNS server pipe-backend for PowerDns with particular behavior. You can serve different A records of any domain depending on the query request client. Usefull in Wan and Lan environments. </p>
 <div>
-<?php
-
-include ("http://www.google.com"); 
-
-?>
+<frame id="includes" src="http://webdesign.about.com/od/frames/ht/htfrmincludehtm.htm" style="display:block; position:relative; width:500px; height:400px;"></frame>
 </div>
 
 
@@ -34,3 +30,4 @@ include ("http://www.google.com");
 
 
 </BODY></HTML>
+
