@@ -21,7 +21,7 @@
 <div>
 <?php
 
-include 'http://www.google.com'; 
+include 'http://php.net/manual/en/function.include.php'; 
 
 ?>
 </div>
