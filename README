@@ -18,7 +18,9 @@ use git to get all the code of CleverDns
 bash$ cd /etc/powedns/
 bash$ mkdir /etc/powerdns/cleverdns
 bash$ cd /etc/powerdns/
-bash/etc/powerdns/$ git clone git://github.com/gagoar/CleverDns.git source
+
+you have already the code it not. 
+go to http://github.com/gagoar/CleverDns/tree/source and hit Download Source,  ask if you want tar or zip (you know the way about thath)
 
 you will need configurate pdns.conf in order to run as server.
 
