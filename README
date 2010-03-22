@@ -19,8 +19,11 @@ bash$ cd /etc/powedns/
 bash$ mkdir /etc/powerdns/cleverdns
 bash$ cd /etc/powerdns/
 
-you have already the code it not. 
+you have already the code if not
 go to http://github.com/gagoar/CleverDns/tree/source and hit Download Source,  ask if you want tar or zip (you know the way about thath)
+or
+do it with git 
+bash|/etc/powerdns/$git clone git://github.com/gagoar/CleverDns.git
 
 you will need configurate pdns.conf in order to run as server.
 
