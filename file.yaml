@@ -1,0 +1,5 @@
+www_clever_dns:
+	enabled: yes
+	ttl: 150
+	A: 127.0.0.1
+	allow: 127.0.0.1/32

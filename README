@@ -1,1 +1,59 @@
-YA VAS A VERestamos probando
+CleverDns - Server recursor code
+install instructions.
+
+This is made thinking on Ubuntu Server. but the process its similar in every Posixa like system
+
+pre-install: 
+you could do this via aptitude or apt-get :)
+
+-pdns-server
+-pdns-backend-pipe
+-libyaml-tiny-perl 
+-libnetaddr-ip-perl
+-libnet-dns-perl
+
+install CleverDns:
+use git to get all the code of CleverDns
+
+bash$ cd /etc/powedns/
+bash$ mkdir /etc/powerdns/cleverdns
+bash$ cd /etc/powerdns/
+bash/etc/powerdns/$ git clone git://github.com/gagoar/CleverDns.git source
+
+you will need configurate pdns.conf in order to run as server.
+
+copy the next configuracion in /etc/powerdns/pdns.conf
+#############################
+config-dir=/etc/powerdns
+daemon=yes
+disable-axfr=yes
+local-address=0.0.0.0
+local-port=53
+module-dir=/usr/lib/powerdns
+setgid=pdns
+setuid=pdns
+socket-dir=/var/run
+version-string=powerdns
+include=/etc/powerdns/pdns.d
+disable-tcp=yes
+distributor-threads=5
+logfile=/var/log/pdns.log
+loglevel=9
+cache-ttl=0
+query-cache-ttl=0
+no-shuffle=yes
+use-logfile=yes
+query-logging=no
+pipebackend-abi-version=2
+launch=pipe
+pipe-command=/etc/powerdns/cleverdns/recursor.pl
+################################################
+post-install:
+you have to edit /etc/default/pdns.conf and change START=no with START=yes
+
+running server:
+bash$ service pdns start
+
+NOTE: to find it out if cleverdns its working properly... you can do (in ubuntu):
+bash$ service pdns monitor 
+and it will run in monitor mode,  you will see all the request of the clients hiting Clever and Clever answering back in each case.
