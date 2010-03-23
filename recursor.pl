@@ -7,7 +7,7 @@ use Yamaling;
 use strict;
 use POSIX qw(strftime);
 
-
+my $config_file="/etc/powerdns/cleverdns/file.yaml"
 $|=1;# no buffering
 
 my $line=<>;
@@ -28,7 +28,7 @@ my $qtype;
 my $id;
 my $remoteip;
 my $localip;
-my $conf=new Yamaling("/etc/powerdns/cleverdns/file.yaml");
+my $conf=new Yamaling($config_file);
 #my $conf=new Yamaling("/home/gagoar/dev/perl/cleverdns.stable/file.yaml");
 $conf->load;
 while(<>)
