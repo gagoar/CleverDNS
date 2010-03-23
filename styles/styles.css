@@ -3,14 +3,14 @@
     cleverDNS
 
     Media: screen
-    Versi—n: 0.1 (marzo 2010)
+    Version: 0.1 (march 2010)
     
     Autor    
       Dori
       flavia.ibanez@gmail.com
 
 /* ---------------------------------------------------
-    Reseteo
+    Reset
 ------------------------------------------------------ */
 html,body,div,span,
 applet,object,iframe,
@@ -47,7 +47,7 @@ blockquote:before, blockquote:after {
     content: "";
 }
 /* ---------------------------------------------------
-    Tipograf’as & Colores
+    Tipography & Colors
 ------------------------------------------------------ */
 
 body{
@@ -90,6 +90,11 @@ font-weight: bold;
 color: #0d202e;
 padding-bottom: 15px;
 border-bottom: 2px solid #B54B02;}
+
+h2{
+font-weight: bold;
+}
+
 th{
 border-bottom: 2px solid #04243C;}
 
@@ -119,8 +124,9 @@ font-weight: bold;
 }
 #footer{
 color: #E2610A;}
+
 /* ---------------------------------------------------
-    Estructura
+    Layout
 ------------------------------------------------------ */
 
 #wrapper{
@@ -131,7 +137,7 @@ margin: 0 auto;
 padding: 120px 25px 50px 25px;
 }
 
-/*primer dise–o de header*/
+/*header option1*/
 
 #brand{
 display: block;
@@ -145,13 +151,13 @@ background: transparent url(images/header.png) left top no-repeat;}
 #menu{
 display: block;
 position: absolute;
-width: 370px;
+width: 600px;
 height: 15px;
-left: 410px;
+left: 176px;
 top:56px;
 }
 
-/*Segundo dise–o de header descomentar y comentar las anteriores*/
+/*header option2*/
 
 /*
 #brand{
@@ -177,32 +183,45 @@ top:78px;
 	position: relative;
 	padding:0 2px 0 5px;
 	}
+
+/*content elements*/
+
 h1{
 margin-bottom: 30px;
 margin-top: 30px;
 clear: both;
 }
 
+h2{
+margin: 15px 0;}
+
 table{
 width: 750px;
 }
-th{
-font-weight: bold;
-padding: 0px 5px;}
+	
+	tr{
+	height: 25px;
+	}
+	td{
+	padding: 0px 10px;}
+	
+	th{
+	font-weight: bold;
+	padding: 0px 5px;}
+	
+	th.name, p.name{
+	width: 35%;}
+	
+	th.enabled{
+	width: 15%;}
 
-th.name, p.name{
-width: 35%;}
-
-th.enabled{
-width: 15%;}
+	th.ttl, p.ttl{
+	width: 10%;}
+	
+	th.actions{
+	width: 10%;}
 
 p.enabled{
-width: 10%;}
-
-th.ttl, p.ttl{
-width: 10%;}
-
-th.actions{
 width: 10%;}
 
 p.name, p.enabled, p.ttl{
@@ -215,15 +234,10 @@ float: left;}
 
 p.enabled{
 width: 15%;}
+
 p.ttl{
 width: 35%;
 }
-
-tr{
-height: 25px;
-}
-td{
-padding: 0px 10px;}
 
 .record{
 display: block;
@@ -233,18 +247,18 @@ width: 100%;
 height: 45px;
 }
 
-.record label{
-margin-left: 20px;}
-
-.record label:first-child{
-margin-left: 0px;}
-
-.record .remove	{
-display: block;
-position: relative;
-float: left;
-margin-top: 20px;
-}
+	.record label{
+	margin-left: 20px;}
+	
+	.record label:first-child{
+	margin-left: 0px;}
+	
+	.record .remove	{
+	display: block;
+	position: relative;
+	float: left;
+	margin-top: 20px;
+	}
 
 #domain_submit{
 margin: 25px 0px;}
@@ -261,6 +275,8 @@ position: relative;
 float: left;
 height: 80px;
 }
+.div_ttl{
+text-transform: uppercase;}
 
 .div_name, .div_ttl{
 width: 300px;}
@@ -271,10 +287,11 @@ position: relative;
 margin: 30px 0px 40px;
 height: 20px;
 }
-.show_domain .name{
-width: 65%;}
-.show_domain .ttl{
-width: 20%;}
+	.show_domain .name{
+	width: 65%;}
+	
+	.show_domain .ttl{
+	width: 20%;}
 
 .reg_dir, .reg_allow{
 display: block;
@@ -319,28 +336,10 @@ width:730px;
 #errorExplanation ul li{
 list-style-position: inside;}
 
-/*
-.record .fieldWithErrors{
-position: relative;
-float: none;
-margin-top: 0px;
-}
-*/
 .div_address, .div_allow{
 display: block;
 position: relative;
 float: left;
 width: 300px;
 }
-.record .fieldWithErrors label
 
-/*
-
-
-.record .fieldWithErrors input{
-margin-top: 17px; 
-margin-left: -42px;
-}
-
-.record .fieldWithErrors .input_allow{margin-left: -100px;}
-*/
