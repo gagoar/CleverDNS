@@ -7,7 +7,13 @@ use Yamaling;
 use strict;
 use POSIX qw(strftime);
 
-my $config_file="/etc/powerdns/cleverdns/file.yaml";
+my $conf_global="/etc/powerdns/cleverdns/global.conf";
+my $global=new Yamaling($conf_global);
+$global->load;
+my $conf_domains_file=$global->{data}->[0]->{global}->{domains};
+my $nameserver=$global->{data}->[0]->{global}->{nameserver};
+my $port=$global->{data}->[0]->{global}->{port};
+
 $|=1;# no buffering
 
 my $line=<>;
@@ -28,9 +34,8 @@ my $qtype;
 my $id;
 my $remoteip;
 my $localip;
-my $conf=new Yamaling($config_file);
-#my $conf=new Yamaling("/home/gagoar/dev/perl/cleverdns.stable/file.yaml");
-$conf->load;
+my $domains=new Yamaling($conf_domains_file);
+$domains->load;
 while(<>)
 {
   print STDERR "$$ Received: $_";
@@ -47,8 +52,8 @@ while(<>)
 	else 	  { 
               	($type,$qname,$qclass,$qtype,$id,$remoteip,$localip)=@arr;
 				if ($qname eq "da39a3ee5e6b4b0d3255bfef95601890afd80709" && $remoteip eq '127.0.0.1') {
-					$conf->load;	
-					warn "reloading configuration\n";
+					$domains->load;
+					warn "reloading configurations\n";
 					print "DATA\t".$qname."\t".$qclass."\tA\t50\t$id\t".strftime("%S.%M.%H.%d",localtime())."\n";
 					warn "DATA\t".$qname."\t".$qclass."\tA\t50\t$id\t".strftime("%S.%M.%H.%d",localtime())."\n";
 					warn "END\n";print "END\n";
@@ -62,7 +67,7 @@ while(<>)
 					else {
 						$req=new Request($qname,$qclass,$qtype,$id,$remoteip,$localip);
 			  			$req->warning;
-						$req->dig_local($conf) or $req->dig_remote;
+						$req->dig_local($domains) or $req->dig_remote("$nameserver","$port");
 					     }
 				}
 			}

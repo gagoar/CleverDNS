@@ -32,16 +32,5 @@ sub load{
 		my ($self)=@_;
 		$self->{data}=YAML::Tiny->read($self->{nom_file});
 }
-sub dig_local{
-		my ($self,$dom,$type)=@_;
-		my $qname=$dom;
-		$qname=~ s/\./_/g;
-		if (defined($self->{data}->[0]->{$qname}->{enabled})){
-		warn "dominio en resolucion local\n";
-		print "DATA\t".$dom."\tIN\t".$type."\t".$self->{data}->[0]->{$qname}->{ttl}."\t1\t".$self->{data}->[0]->{$qname}->{$type}."\n";
-		warn "DATA\t".$dom."\tIN\t".$type."\t".$self->{data}->[0]->{$qname}->{ttl}."\t1\t".$self->{data}->[0]->{$qname}->{$type}."\n";
-		print "END\n";
-		}
-	}
 }
 1;

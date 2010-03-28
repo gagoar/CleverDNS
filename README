@@ -1,7 +1,7 @@
-CleverDns - Server recursor code
+CleverDNS - Server recursor code
 install instructions.
 
-This is made thinking on Ubuntu Server. but the process its similar in every Posixa like system
+This is made thinking on Ubuntu Server. but the process its similar in every Posix like system
 
 pre-install: 
 you could do this via aptitude or apt-get :)
@@ -12,18 +12,16 @@ you could do this via aptitude or apt-get :)
 -libnetaddr-ip-perl
 -libnet-dns-perl
 
-install CleverDns:
-use git to get all the code of CleverDns
+install CleverDNS:
+you have already the code? if not use git to get all the code of CleverDns
 
 bash$ cd /etc/powedns/
-bash$ mkdir /etc/powerdns/cleverdns
-bash$ cd /etc/powerdns/
+bash:/etc/powerdns$ mkdir /etc/powerdns/cleverdns
+bash:/etc/powerdns$ cd cleverdns
+bash:/etc/powerdns/cleverdns$git clone git://github.com/gagoar/CleverDNS.git .
 
-you have already the code if not
-go to http://github.com/gagoar/CleverDns/tree/source and hit Download Source,  ask if you want tar or zip (you know the way about thath)
-or
-do it with git 
-bash|/etc/powerdns/$git clone git://github.com/gagoar/CleverDns.git
+ or 
+go to http://github.com/gagoar/CleverDNS/tree/source and hit Download Source,  ask if you want tar or zip (you know how it goes)
 
 you will need configurate pdns.conf in order to run as server.
 
@@ -56,9 +54,16 @@ pipe-command=/etc/powerdns/cleverdns/recursor.pl
 post-install:
 you have to edit /etc/default/pdns.conf and change START=no with START=yes
 
+in Cleverdns you have a file with important information: global.conf
+here you can change: Where is store the local domains,  nameserver to ask for external domains and port if it's different than 53.
+if you dont use this 2 vars and let it blank. Cleverdns will use /etc/resolv.conf to ask.
+
 running server:
 bash$ service pdns start
 
 NOTE: to find it out if cleverdns its working properly... you can do (in ubuntu):
 bash$ service pdns monitor 
-and it will run in monitor mode,  you will see all the request of the clients hiting Clever and Clever answering back in each case.
+and it will run in monitor mode,  you will see all the request of the clients hiting CleverDNS and CleverDNS answering back in each case.
+
+enjoy this code. let me know if I can help.
+xeroice at gmail.com

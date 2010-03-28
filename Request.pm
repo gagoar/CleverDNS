@@ -57,8 +57,14 @@ sub dig_local {
 return $FLAG;
 }
 sub dig_remote{
-		my ($self)=@_;
+		my ($self, $ns, $port)=@_;
 		$get=Net::DNS::Resolver->new;
+		if ( $ns and $port )
+		{
+			$get->nameservers($ns);
+			$get->port($port);
+		}
+		warn "Using nameservers:",  $get->nameservers , " on port " , $get->port, "\n";
 		my $query;
 		if ($self->{qtype} eq "SOA")
 			 {$query=$get->query($self->{qname},"SOA");warn "its SOA\n";}
